@@ -367,6 +367,7 @@
 "Assets/Assets/ToonWater/Scripts/FramesPerSecond.cs"
 "Assets/Assets/ToonWater/Scripts/SmoothCameraOrbit.cs"
 "Assets/Assets/ToonWater/Scripts/SmoothFollowCamBump.cs"
+"Assets/pat-test-script/catActionScript.cs"
 "Assets/pat-test-script/catController.cs"
 "Assets/pat-test-script/catMoveScript.cs"
 "Assets/pat-test-script/interactableObjects.cs"

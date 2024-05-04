@@ -5,15 +5,19 @@ using UnityEngine.InputSystem;
 
 public class catController : MonoBehaviour
 {
-    private PlayerInputEditor _playerInputs;
-    private Camera _camera;
+    /// <summary>
+    /// Handle Player Inputs
+    /// </summary>
 
-    private catMoveScript _catMoveScript;   
+    private PlayerInputEditor _playerInputs;
+    private catMoveScript _catMoveScript;
+    private catActionScript _catActionScript;
 
     private void Awake()
     {
         _playerInputs = new PlayerInputEditor();
         _catMoveScript = GetComponent<catMoveScript>();
+        _catActionScript = GetComponent<catActionScript>();
     }
 
     #region enable/disable input action
@@ -46,6 +50,7 @@ public class catController : MonoBehaviour
 
     public void interactInput(InputAction.CallbackContext context)
     {
-       //button para sa pag interact sa object
+        //button para sa pag interact sa object
+        _catActionScript.puddleInteraction();
     }
 }
