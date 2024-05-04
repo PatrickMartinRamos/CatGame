@@ -5,7 +5,6 @@ using static UnityEngine.InputSystem.InputAction;
 public class catMoveScript : MonoBehaviour
 {
     //system var
-    private PlayerInputEditor _playerInputs;
     private Camera _camera;
     private NavMeshAgent _agent;
 
@@ -13,24 +12,19 @@ public class catMoveScript : MonoBehaviour
     [SerializeField]
     private float rotationSpeed = 3f;
 
-    private void Awake() => _playerInputs = new PlayerInputEditor();
-    private void OnEnable() => _playerInputs.Enable();
-    private void OnDisable() => _playerInputs.Disable();
-
     private void Start()
     {
-        _playerInputs.playerMovements.Walk.performed += Walk;
         _camera = Camera.main;
         _agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        rotatePlayer();
+        rotateMotion();
     }
 
     #region walk / rotation 
-    void Walk(CallbackContext context)
+    public void WalkMotion()
     {
         RaycastHit hit;
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
@@ -42,7 +36,7 @@ public class catMoveScript : MonoBehaviour
         }
     }
 
-    void rotatePlayer()
+    void rotateMotion()
     {
         if (isRotating)
         {
@@ -53,13 +47,18 @@ public class catMoveScript : MonoBehaviour
                 Quaternion rotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
             }
-
-            // If the angle between current facing direction and desired direction is small enough, stop rotating
             if (Quaternion.Angle(transform.rotation, Quaternion.LookRotation(direction)) < 5f)
             {
                 isRotating = false;
                 _agent.isStopped = false;
             }
+        }
+        else
+        {
+            // If not rotating, maintain the current rotation
+            _agent.updateRotation = false;
+            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+            _agent.updateRotation = true;
         }
     }
     #endregion
