@@ -4,6 +4,10 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class catMoveScript : MonoBehaviour
 {
+    /// <summary>
+    /// Handle Player motion
+    /// </summary>
+
     //system var
     private Camera _camera;
     private NavMeshAgent _agent;
