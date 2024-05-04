@@ -63,6 +63,7 @@
     <Compile Include="Assets\Assets\ToonWater\Scripts\SmoothFollowCamBump.cs" />
     <Compile Include="Assets\pat-test-script\catController.cs" />
     <Compile Include="Assets\pat-test-script\interactableObjects.cs" />
+    <Compile Include="Assets\pat-test-script\catManagerScript.cs" />
     <Compile Include="Assets\Assets\ToonWater\Scripts\SmoothCameraOrbit.cs" />
     <Compile Include="Assets\pat-test-script\catMoveScript.cs" />
     <Compile Include="Assets\Assets\ToonWater\Scripts\Core\ToonWater.cs" />

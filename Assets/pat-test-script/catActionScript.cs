@@ -8,15 +8,13 @@ public class catActionScript : MonoBehaviour
     /// <summary>
     /// Handle Player Interaction to Objects
     /// </summary>
-  
-    //system var
-    [SerializeField] private float interactRadius;
-    private bool isInsidePuddle = false;
-    private bool isPlayerMoving = false;
-    private Vector3 previousPOS;
 
-    //public var
-    public LayerMask puddleMask;
+    //system var
+    public float interactRadius;
+    public bool isInsidePuddle = false;
+    public bool isInsideShadow = false;
+    public bool isPlayerMoving = false;
+    private Vector3 previousPOS;
 
     private void Start()
     {
@@ -26,37 +24,16 @@ public class catActionScript : MonoBehaviour
     private void Update()
     {
         isPlayerMoving = IsPlayerMoving();
-
-        puddleCheck();
     }
 
     bool IsPlayerMoving()
     {
         bool moving = transform.position != previousPOS;
 
-        // Update the previous position
         previousPOS = transform.position;
 
         return moving;
     }
-
-    #region check if playe is inside the puddle
-    void puddleCheck()
-    {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, interactRadius, puddleMask);
-
-        if (colliders.Length > 0)
-        {
-            isInsidePuddle = true;
-            //Debug.Log("Player is inside the puddle!");
-        }
-        else
-        {
-            isInsidePuddle = false;
-            //Debug.Log("Player is not inside the puddle.");
-        }
-    }
-    #endregion
 
     public void puddleInteraction()
     {
