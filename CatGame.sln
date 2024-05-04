@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Setti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.csproj", "{7FD226DD-5630-C193-61BB-6149066742BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.AI.Navigation.Editor", "Unity.AI.Navigation.Editor.csproj", "{A14C1072-DA99-DC53-8DEF-B2D0F6802283}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualStudio.Editor", "Unity.VisualStudio.Editor.csproj", "{B8761704-9B13-079D-7DED-023F5AECFBE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.unity.cinemachine.editor", "com.unity.cinemachine.editor.csproj", "{90209429-205F-E9D1-E899-10CFF160E769}"
@@ -34,6 +36,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TestTools.CodeCoverage.Editor.OpenCover.Model", "Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj", "{760C22E9-C5D3-F53C-CB0E-116E4D1D1F1C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Rider.Editor", "Unity.Rider.Editor.csproj", "{7B65B251-07A6-13F4-742B-EF9489F7EB38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.AI.Navigation", "Unity.AI.Navigation.csproj", "{78DBD612-E238-8294-2BFD-5AC182F3753E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.AI.Navigation.Editor.ConversionSystem", "Unity.AI.Navigation.Editor.ConversionSystem.csproj", "{45835A3D-C36E-8A11-8665-4EDD75097851}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.State.Editor", "Unity.VisualScripting.State.Editor.csproj", "{FA1EEE79-2E15-EBFD-B49E-509D3B728BFF}"
 EndProject
@@ -48,6 +54,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VSCode.Editor", "Unity.VSCode.Editor.csproj", "{153F0CF6-0291-B922-A752-783D0F9489EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection", "Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj", "{D6EAE3C2-96CC-3870-0ED1-BAE6A4A1077D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.AI.Navigation.Updater", "Unity.AI.Navigation.Updater.csproj", "{7D4B0716-538D-C732-6FCC-2A1A121D885B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Settings.Editor", "Unity.Settings.Editor.csproj", "{7B3923FA-156F-A6F0-B52E-FCDBC588E285}"
 EndProject
@@ -121,6 +129,10 @@ Global
 		{7FD226DD-5630-C193-61BB-6149066742BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FD226DD-5630-C193-61BB-6149066742BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FD226DD-5630-C193-61BB-6149066742BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A14C1072-DA99-DC53-8DEF-B2D0F6802283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14C1072-DA99-DC53-8DEF-B2D0F6802283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14C1072-DA99-DC53-8DEF-B2D0F6802283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14C1072-DA99-DC53-8DEF-B2D0F6802283}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B8761704-9B13-079D-7DED-023F5AECFBE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B8761704-9B13-079D-7DED-023F5AECFBE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8761704-9B13-079D-7DED-023F5AECFBE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -137,6 +149,14 @@ Global
 		{7B65B251-07A6-13F4-742B-EF9489F7EB38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B65B251-07A6-13F4-742B-EF9489F7EB38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B65B251-07A6-13F4-742B-EF9489F7EB38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78DBD612-E238-8294-2BFD-5AC182F3753E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78DBD612-E238-8294-2BFD-5AC182F3753E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78DBD612-E238-8294-2BFD-5AC182F3753E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78DBD612-E238-8294-2BFD-5AC182F3753E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45835A3D-C36E-8A11-8665-4EDD75097851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45835A3D-C36E-8A11-8665-4EDD75097851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45835A3D-C36E-8A11-8665-4EDD75097851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45835A3D-C36E-8A11-8665-4EDD75097851}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA1EEE79-2E15-EBFD-B49E-509D3B728BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA1EEE79-2E15-EBFD-B49E-509D3B728BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA1EEE79-2E15-EBFD-B49E-509D3B728BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -165,6 +185,10 @@ Global
 		{D6EAE3C2-96CC-3870-0ED1-BAE6A4A1077D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6EAE3C2-96CC-3870-0ED1-BAE6A4A1077D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6EAE3C2-96CC-3870-0ED1-BAE6A4A1077D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D4B0716-538D-C732-6FCC-2A1A121D885B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D4B0716-538D-C732-6FCC-2A1A121D885B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D4B0716-538D-C732-6FCC-2A1A121D885B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D4B0716-538D-C732-6FCC-2A1A121D885B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7B3923FA-156F-A6F0-B52E-FCDBC588E285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7B3923FA-156F-A6F0-B52E-FCDBC588E285}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B3923FA-156F-A6F0-B52E-FCDBC588E285}.Release|Any CPU.ActiveCfg = Release|Any CPU

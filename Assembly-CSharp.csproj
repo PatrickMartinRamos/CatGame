@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\pat-test-script\catMoveScript.cs" />
+    <Compile Include="Assets\pat-test-script\playerInputEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -698,6 +699,10 @@
       <Project>{90209429-205F-E9D1-E899-10CFF160E769}</Project>
       <Name>com.unity.cinemachine.editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.csproj">
+      <Project>{78DBD612-E238-8294-2BFD-5AC182F3753E}</Project>
+      <Name>Unity.AI.Navigation</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
       <Project>{2A3F2225-6FA3-0714-DEDF-750244583606}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
@@ -766,6 +771,10 @@
       <Project>{760C22E9-C5D3-F53C-CB0E-116E4D1D1F1C}</Project>
       <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Updater.csproj">
+      <Project>{7D4B0716-538D-C732-6FCC-2A1A121D885B}</Project>
+      <Name>Unity.AI.Navigation.Updater</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
       <Project>{FA1EEE79-2E15-EBFD-B49E-509D3B728BFF}</Project>
       <Name>Unity.VisualScripting.State.Editor</Name>
@@ -778,17 +787,25 @@
       <Project>{7E5F33B3-3724-E5AA-1A08-9D50746830FA}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.csproj">
+      <Project>{A14C1072-DA99-DC53-8DEF-B2D0F6802283}</Project>
+      <Name>Unity.AI.Navigation.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.csproj">
       <Project>{ED4D5F44-4E48-9F22-4E8D-57301D4AD746}</Project>
       <Name>Unity.VisualScripting.State</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{153F0CF6-0291-B922-A752-783D0F9489EB}</Project>
-      <Name>Unity.VSCode.Editor</Name>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.ConversionSystem.csproj">
+      <Project>{45835A3D-C36E-8A11-8665-4EDD75097851}</Project>
+      <Name>Unity.AI.Navigation.Editor.ConversionSystem</Name>
     </ProjectReference>
     <ProjectReference Include="Cinemachine.csproj">
       <Project>{0BA82C23-A81C-16D9-DFED-2BA45EF9D392}</Project>
       <Name>Cinemachine</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{153F0CF6-0291-B922-A752-783D0F9489EB}</Project>
+      <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
