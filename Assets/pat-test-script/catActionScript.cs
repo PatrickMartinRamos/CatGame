@@ -11,11 +11,19 @@ public class catActionScript : MonoBehaviour
 
     //system var
     public float interactRadius;
+
     public bool isInsidePuddle = false;
     public bool isInsideShadow = false;
     public bool isPlayerMoving = false;
+    public bool canDragObject = false;
     private Vector3 previousPOS;
 
+    private interactableObjects _interActableObjects;
+
+    private void Awake()
+    {
+        _interActableObjects = FindObjectOfType<interactableObjects>();
+    }
     private void Start()
     {
         previousPOS = transform.position;
@@ -39,14 +47,27 @@ public class catActionScript : MonoBehaviour
     {
         if(isInsidePuddle && !isPlayerMoving)
         {
-            Debug.Log("can interact");
+            //Debug.Log("can interact");
         }
         else
         {
-            Debug.Log("can't interact");
+           // Debug.Log("can't interact");
         }
     }
 
+    public void canDragPuzzleObject()
+    {
+       if(canDragObject)
+       {
+            //Debug.Log("object can be drag");
+            _interActableObjects.dragPuzzleObject();
+       }
+       else
+       {
+            Debug.Log("object cant be drag");
+       }
+    }
+        
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

@@ -44,6 +44,15 @@ public partial class @PlayerInputEditor: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""dragObject"",
+                    ""type"": ""Button"",
+                    ""id"": ""0d0c9431-1661-438b-8afb-baee061e821f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -68,6 +77,17 @@ public partial class @PlayerInputEditor: IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cc1d46a5-1d11-480e-a6c3-3f1018e379ae"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""dragObject"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -78,6 +98,7 @@ public partial class @PlayerInputEditor: IInputActionCollection2, IDisposable
         m_playerMovements = asset.FindActionMap("playerMovements", throwIfNotFound: true);
         m_playerMovements_Walk = m_playerMovements.FindAction("Walk", throwIfNotFound: true);
         m_playerMovements_Interact = m_playerMovements.FindAction("Interact", throwIfNotFound: true);
+        m_playerMovements_dragObject = m_playerMovements.FindAction("dragObject", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -141,12 +162,14 @@ public partial class @PlayerInputEditor: IInputActionCollection2, IDisposable
     private List<IPlayerMovementsActions> m_PlayerMovementsActionsCallbackInterfaces = new List<IPlayerMovementsActions>();
     private readonly InputAction m_playerMovements_Walk;
     private readonly InputAction m_playerMovements_Interact;
+    private readonly InputAction m_playerMovements_dragObject;
     public struct PlayerMovementsActions
     {
         private @PlayerInputEditor m_Wrapper;
         public PlayerMovementsActions(@PlayerInputEditor wrapper) { m_Wrapper = wrapper; }
         public InputAction @Walk => m_Wrapper.m_playerMovements_Walk;
         public InputAction @Interact => m_Wrapper.m_playerMovements_Interact;
+        public InputAction @dragObject => m_Wrapper.m_playerMovements_dragObject;
         public InputActionMap Get() { return m_Wrapper.m_playerMovements; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -162,6 +185,9 @@ public partial class @PlayerInputEditor: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @dragObject.started += instance.OnDragObject;
+            @dragObject.performed += instance.OnDragObject;
+            @dragObject.canceled += instance.OnDragObject;
         }
 
         private void UnregisterCallbacks(IPlayerMovementsActions instance)
@@ -172,6 +198,9 @@ public partial class @PlayerInputEditor: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @dragObject.started -= instance.OnDragObject;
+            @dragObject.performed -= instance.OnDragObject;
+            @dragObject.canceled -= instance.OnDragObject;
         }
 
         public void RemoveCallbacks(IPlayerMovementsActions instance)
@@ -193,5 +222,6 @@ public partial class @PlayerInputEditor: IInputActionCollection2, IDisposable
     {
         void OnWalk(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnDragObject(InputAction.CallbackContext context);
     }
 }

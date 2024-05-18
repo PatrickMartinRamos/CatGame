@@ -15,6 +15,7 @@ public class interactableObjects : MonoBehaviour
     //public var
     public LayerMask puddleMask;
     public LayerMask shadowMask;
+    public LayerMask puzzleObjectsMask;
 
     private void Awake()
     {
@@ -25,9 +26,10 @@ public class interactableObjects : MonoBehaviour
     {
         puddleCheck();
         shadowCheck();
+        puzzleObjectCheck();
     }
 
-    #region check if playe is inside the puddle
+    #region check if player is inside the puddle
     void puddleCheck()
     {
         Collider[] colliders = Physics.OverlapSphere(playerTransform.position,_catActionScript.interactRadius, puddleMask);
@@ -50,12 +52,13 @@ public class interactableObjects : MonoBehaviour
     {
         Collider[] colliders = Physics.OverlapSphere(playerTransform.position, _catActionScript.interactRadius, shadowMask);
 
+        //lagay dto logic for shadow and sun interaction
         if (colliders.Length > 0)
         {
             _catActionScript.isInsideShadow = true;
             if(_catActionScript.isInsideShadow)
             {
-                Debug.Log("Player is inside the shadow!");
+                //Debug.Log("Player is inside the shadow!");
             }
         }
         else
@@ -63,11 +66,47 @@ public class interactableObjects : MonoBehaviour
             _catActionScript.isInsideShadow = false;
             if(!_catActionScript.isInsideShadow)
             {
-                Debug.Log("Player is not inside the shadow!");
+                //Debug.Log("Player is not inside the shadow!");
             }
         }
     }
     #endregion
 
+    #region check if player can interact with the puzzle object
+    void puzzleObjectCheck()
+    {
+        Collider[] colliders = Physics.OverlapSphere(playerTransform.position, _catActionScript.interactRadius, puzzleObjectsMask);
 
+        if(colliders.Length > 0)
+        {
+            _catActionScript.canDragObject = true;
+            if(_catActionScript.canDragObject)
+            {
+              // Debug.Log("can drag object");
+            }
+        }
+        else
+        {
+            _catActionScript.canDragObject = false;
+            if (!_catActionScript.canDragObject)
+            {
+               // Debug.Log("can drag object");
+            }
+        }
+    }
+    #endregion
+
+    public void dragPuzzleObject()
+    {
+        Collider[] colliders = Physics.OverlapSphere(playerTransform.position, _catActionScript.interactRadius, puzzleObjectsMask);
+
+        if (colliders.Length > 0)
+        {
+            _catActionScript.canDragObject = true;
+            if (_catActionScript.canDragObject)
+            {
+                Debug.Log("Test", colliders[0].gameObject);
+            }
+        }
+    }
 }
