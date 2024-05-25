@@ -16,6 +16,7 @@ public class catActionScript : MonoBehaviour
     public bool isInsideShadow = false;
     public bool isPlayerMoving = false;
     public bool canDragObject = false;
+    public bool isDragginObject = false;
     private Vector3 previousPOS;
 
     private interactableObjects _interActableObjects;
@@ -59,13 +60,13 @@ public class catActionScript : MonoBehaviour
     {
        if(canDragObject)
        {
-            //Debug.Log("object can be drag");
-            _interActableObjects.dragPuzzleObject();
+           _interActableObjects.dragPuzzleObject();
        }
-       else
-       {
-            Debug.Log("object cant be drag");
-       }
+    }
+
+    public void draggingObject()
+    {
+        isDragginObject = !isDragginObject;
     }
         
     private void OnDrawGizmos()

@@ -103,10 +103,20 @@ public class interactableObjects : MonoBehaviour
         if (colliders.Length > 0)
         {
             _catActionScript.canDragObject = true;
-            if (_catActionScript.canDragObject)
+            if (_catActionScript.canDragObject && _catActionScript.isDragginObject)
             {
-                Debug.Log("Test", colliders[0].gameObject);
+                Debug.Log("object is being drag");
+              //Debug.Log("Test", colliders[0].gameObject); 
+            }
+            if(!_catActionScript.isDragginObject)
+            {
+                Debug.Log("Object is not being drag");
             }
         }
+    }
+
+    public void dragObject()
+    {
+        //logic for draging objects
     }
 }

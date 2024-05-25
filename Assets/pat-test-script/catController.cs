@@ -74,5 +74,6 @@ public class catController : MonoBehaviour
     public void dragInput(InputAction.CallbackContext context)
     {
         _catActionScript.canDragPuzzleObject();
+        _catActionScript.isDragginObject = !_catActionScript.isDragginObject;
     }
 }
