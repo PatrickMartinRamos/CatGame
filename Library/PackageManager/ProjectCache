@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638526421505918395
+      ticks: 638526426191032249
     m_Hash: 4286452287
   m_LockFileStatus:
     m_FilePath: C:/Users/Hiimk/OneDrive/Desktop/Course/CatGame/CatGame/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638526421505938530
+      ticks: 638526426191047025
     m_Hash: 2260364598
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
